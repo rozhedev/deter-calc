@@ -1,0 +1,163 @@
+// * <UI CLASSES>==========================================
+
+body {
+    background: $light-color;
+    color: $dark-color;
+    transition: $transition;
+}
+
+.deter-calc {
+    .h1 {
+        margin: 80px 0px 40px 0px;
+        @include media(map-get($grid-breakpoints, lg)) {
+            margin: 64px 0px 32px 0px;
+        }
+        text-align: center;
+    }
+}
+
+.h1 {
+    font-size: 2.488rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+
+    @include media(map-get($grid-breakpoints, lg)) {
+        font-size: 2.074rem;
+    }
+}
+
+.h3 {
+    font-size: 1.728rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+
+    @include media(map-get($grid-breakpoints, sm)) {
+        font-size: 1.44rem;
+    }
+}
+
+.btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    border-radius: 4px;
+    color: $light-color;
+    background-color: $accent-color;
+    transition: $transition;
+
+    @include hover {
+        background-color: $dark-accent-color;
+    }
+    @include media(map-get($grid-breakpoints, lg)) {
+        font-size: 1rem;
+    }
+}
+
+.navlink {
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    color: $dark-color;
+    transition: $transition;
+}
+
+.link {
+    color: $active-blue-color;
+    text-decoration: underline;
+
+    @include hover {
+        text-decoration: none;
+    }
+}
+
+.label {
+    font-size: 1.115rem;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+}
+
+.error-text {
+    opacity: 0;
+    pointer-events: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: $error-red;
+
+    ._error & {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+// * INPUT ELEMENTS
+
+.inp {
+    @include col(3);
+    padding: 8px 6px;
+    color: $dark-color;
+    background-color: $light-color;
+    border-bottom: 3px solid $inactive-blue-color;
+    transition: $transition;
+
+    ._error &,
+    ._error &:focus {
+        border-color: $error-red;
+        background-color: lighten($error-red, 44%);
+    }
+    ._success &,
+    ._success &:focus {
+        border-color: $accent-color;
+        background-color: lighten($accent-color, 56%);
+    }
+    &:focus {
+        border-color: $active-blue-color;
+        background-color: lighten($active-blue-color, 56%);
+    }
+
+    @include media(map-get($grid-breakpoints, sm)) {
+     width: 320px;
+    }
+}
+
+.ordered-list {
+    counter-reset: myCounter;
+
+    li {
+        list-style: none;
+        margin: 0 0 0 16px;
+
+        &::before {
+            counter-increment: myCounter;
+            content: counter(myCounter);
+            color: $accent-color;
+            display: inline;
+            font-weight: 600;
+            margin: 0 10px 0 0;
+        }
+    }
+}
+
+.unordered-list {
+    li {
+        margin: 6px 0;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background-color: $accent-color;
+            margin: 0px 8px 1px 16px;
+        }
+    }
+}
+

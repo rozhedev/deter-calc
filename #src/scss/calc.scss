@@ -1,0 +1,107 @@
+.deter-calc {
+    .h1 {
+        margin: 80px 0px 40px 0px;
+        @include media(map-get($grid-breakpoints, lg)) {
+            margin: 64px 0px 32px 0px;
+        }
+        text-align: center;
+    }
+    
+    .calc-steps {
+        @include col(12);
+
+        &__item:not(:first-of-type) {
+            margin-top: 1.5rem;
+        }
+
+        .tabs__content-item._active {
+            display: block;
+        }
+        &__form {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+
+            // * Forms layouts
+            
+            &[data-grid='2'] {
+                @include col(6);
+                .calc-steps__content-item {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                @include media(map-get($grid-breakpoints, md)) {
+                    @include col(10);
+                }
+            }
+
+            &[data-grid='3'] {
+                @include col(6);
+                .calc-steps__content-item {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                @include media(map-get($grid-breakpoints, md)) {
+                    @include col(10);
+                }
+            }
+
+            &[data-grid='4'] {
+                @include col(8);
+                .calc-steps__content-item {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+                @include media(map-get($grid-breakpoints, md)) {
+                    @include col(12);
+                }
+            }
+
+            &[data-grid='2'], &[data-grid='3'], &[data-grid='4'] {
+                @include media(map-get($grid-breakpoints, sm)) {
+                    width: 328px;
+                }
+            }
+
+            .btn {
+                margin: 1rem auto 0;
+                width: initial;
+            }
+        }
+
+        &__content-item {
+            display: grid;
+            grid-template-rows: repeat(1, minmax(3rem, auto));
+            grid-auto-rows: minmax(3rem, auto);
+            grid-gap: 0px 32px;
+
+            @include media(map-get($grid-breakpoints, sm)) {
+                @include col(2);
+                grid-template-rows: repeat(4, 1fr);
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        &__result {
+            @include col(8);
+            margin: 1.75rem auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            @include media(map-get($grid-breakpoints, md)) {
+                flex-direction: column;
+            }
+
+            &-col {
+                &:hover .step-title svg.expenses {
+                    fill: rgba($error-red, 0.32);
+                }
+                &:hover .step-title svg.profit {
+                    fill: rgba($accent-color, 0.32);
+                }
+                @include media(map-get($grid-breakpoints, md)) {
+                    width: 100%;
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+}

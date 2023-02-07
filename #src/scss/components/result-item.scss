@@ -1,0 +1,23 @@
+.result-item {
+    &__content {
+        margin-bottom: 50px;
+    }
+
+    &__label,
+    &__value,
+    &__currency {
+        font-size: 1.33rem;
+        @include media(map-get($grid-breakpoints, lg)) {
+            font-size: 1.5rem;
+        }
+        @include media(map-get($grid-breakpoints, sm)) {
+            font-size: 1.3rem;
+        }
+    }
+    &__label {
+        font-weight: 500;
+    }
+    &__value {
+        margin-left: 0.6rem;
+    }
+}

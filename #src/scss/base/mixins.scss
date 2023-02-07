@@ -1,0 +1,76 @@
+@mixin hover {
+    @media (any-hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin btn {
+    padding: 0.2rem 0.4rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    border-radius: 4px;
+    color: $light-color;
+    background-color: $accent-color;
+    transition: $transition;
+
+    @include hover {
+        background-color: lighten($accent-color, 12%);
+    }
+
+    @include media(map-get($grid-breakpoints, lg)) {
+        font-size: 1rem;
+    }
+}
+
+@mixin navlink-animation {
+    cursor: pointer;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+
+        display: block;
+        width: 0%;
+        height: 3px;
+        background-color: $accent-color;
+        border-radius: 2px;
+        transition: $transition;
+    }
+    @include hover {
+        width: 100%;
+        color: $accent-color;
+
+        &::after {
+            left: 0;
+            width: 100%;
+        }
+    }
+    &:active {
+        color: $accent-color;
+    }
+}
+
+@mixin centering {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin rectangle($width, $height, $bg-color, $border-radius) {
+    width: $width;
+    height: $height;
+    background-color: $bg-color;
+    border-radius: $border-radius;
+}

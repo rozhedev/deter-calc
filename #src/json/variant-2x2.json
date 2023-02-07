@@ -1,0 +1,26 @@
+[
+    {
+        "placeholder": "Число №1",
+        "type": "number",
+        "id": "first-number-2x2",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №2",
+        "type": "number",
+        "id": "second-number-2x2",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №3",
+        "type": "number",
+        "id": "third-number-2x2",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №4",
+        "type": "number",
+        "id": "fourth-number-2x2",
+        "class": "deter-calc-inp"
+    }
+]

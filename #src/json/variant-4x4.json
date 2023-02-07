@@ -1,0 +1,98 @@
+[
+    {
+        "placeholder": "Число №1",
+        "type": "number",
+        "id": "first-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №2",
+        "type": "number",
+        "id": "second-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №3",
+        "type": "number",
+        "id": "third-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №4",
+        "type": "number",
+        "id": "fourth-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №5",
+        "type": "number",
+        "id": "fifth-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №6",
+        "type": "number",
+        "id": "sixth-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №7",
+        "type": "number",
+        "id": "seventh-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №8",
+        "type": "number",
+        "id": "eighth-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №9",
+        "type": "number",
+        "id": "ninth-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №10",
+        "type": "number",
+        "id": "tenth-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №11",
+        "type": "number",
+        "id": "eleven-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №12",
+        "type": "number",
+        "id": "twelve-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №13",
+        "type": "number",
+        "id": "thirdteenth-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №14",
+        "type": "number",
+        "id": "fourteenth-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №15",
+        "type": "number",
+        "id": "fifteenth-number-4x4",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №16",
+        "type": "number",
+        "id": "sixteenth-number-4x4",
+        "class": "deter-calc-inp"
+    }
+]

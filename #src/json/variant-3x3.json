@@ -1,0 +1,56 @@
+[
+    {
+        "placeholder": "Число №1",
+        "type": "number",
+        "id": "first-number-3x3",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №2",
+        "type": "number",
+        "id": "second-number-3x3",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №3",
+        "type": "number",
+        "id": "third-number-3x3",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №4",
+        "type": "number",
+        "id": "fourth-number-3x3",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №5",
+        "type": "number",
+        "id": "fifth-number-3x3",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №6",
+        "type": "number",
+        "id": "sixth-number-3x3",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №7",
+        "type": "number",
+        "id": "seventh-number-3x3",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №8",
+        "type": "number",
+        "id": "eighth-number-3x3",
+        "class": "deter-calc-inp"
+    },
+    {
+        "placeholder": "Число №9",
+        "type": "number",
+        "id": "ninth-number-3x3",
+        "class": "deter-calc-inp"
+    }
+]
