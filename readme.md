@@ -1,91 +1,99 @@
-Улутшенный шаблон CodeQuest https://youtu.be/qSZvGlIKGPg. Все что касается изм. этой сборки описано здесь
-Пользуюсь VS Code https://code.visualstudio.com при установке лучше проставить все галки для удобства работы.
+# Deter Calc
 
-Как запустить сборку?
+Pet project for calculate determinant in three variations:
+* 2х2
+* 3х3
+* 4х4
 
-1. Устанавливаем NodeJS https://nodejs.org/uk . Нам нужна LTS версия.
+## Demo
 
-2. Устанавлмваем Git https://git-scm.com/ .
+![demo](blob/demo.gif)
 
-3. Заходим в PowerShell от имени администратора и вводим команду: Set-ExecutionPolicy RemoteSigned после этого высветится
-подтверждение, нажимаем Y. Этот шаг нужен чтобы разрешить выполнение локальных скриптов в Powershell.
+## Usage
 
-3. Открываем проект в редакторе. После этого нажимаем Ctrl + ~ чтобы открыть терминал.
+I use an improved Gulp-based build taken from this video: [Click](https://youtu.be/qSZvGlIKGPg)
 
-4. Пишем команду npm i gulp -D . После этого вводим npm i | Вопреки большему к-ству ошибок сборка работает нормально.
-(большое к-ство ошибок - неотъемлимый атрибут любого open source :) ).
+First of all, open project in [VS Code](https://code.visualstudio.com). After that, open terminal.
 
-5. Пишем gulp для запуска сборки в режиме разработки. 
-Если работа над проектом закончена пишем gulp --production для минификации кода и изображений.
-________________________________________________________________________
+If you do not have Gulp installed, write the commands:
 
-В случае проблем
+```bash
+  npm i gulp -D
 
-npm rebuild - если после команды npm i установились не все пакеты.
-npm cache verify - если после сборка после перезапуска не ловит изменений на лету.
-Настрой запуск VS Code от имени администратора: 
-https://qastack.ru/programming/37700536/visual-studio-code-terminal-how-to-run-a-command-with-administrator-rights
-________________________________________________________________________
+  npm i gulp-cli -D
+```
 
-Предназначение папок:
+After that, install dependencies:
 
-#src - папка с исхдниками.
+```bash
+  npm i
+```
 
-z_dist - папка с готовым проектом, на хостинг нужно отправлять её.
-_____________________
+For start the project in development mode:
 
-Эти папки / файлы лучше не трогать!
+```bash
+  gulp
+```
 
-config - конфиг. сборки. У файле path - все пути ко всем видам файлов. У файле app.js - настройки плагинов.
-tasks - все задачи сборки по обработке файлов.
-node_modules - папка в которой хранятся все файлы плагинов и их зависимостей.
-package-lock.json - файл с опис. всех зависимостей сборки.
-package.json - файл с опис. всех уст. плагинов.
+If the project is finished, minify the code and images, use command:
 
-.gitignore - добавляй сюда пути к папкам или файлам, если хочешь чтобы Git их игнорировал.
-gulpfile.js - главный файл сборки где билдятся все задачи и конфиг.
-_____________________
+```bash
+  gulp --production
+```
 
-* Для удобного просмотра истории версий советую скачать Git History Diff. У верхнем правом углу появится его иконка.
-** Все библиотеки подключаю через npm. Никаких ссылок на внешние стили/скрипты!
-*** SVG иконки исп. только в спрайте в img/icons/sprite.svg. Для одноцветных и многоцветных иконок отдельные спрайты.
+### Troubleshooting
 
-ОЧЕНЬ ВАЖНО!!! Любые пути к файлу указывай относительно его расположения в папке "z_dist". Например:
-Путь к шрифтам будет не "../../fonts/font-name.woff" а "../fonts/font-name.woff", потому что 1 вложеность.
-С картинками похожая схема, пиши их путь относительно расположения html файла в этой же папке
+1. Set VS Code to run as an administrator [Click](https://qastack.ru/programming/37700536/visual-studio-code-terminal-how-to-run-a-command-with-administrator-rights)
+2. **Node JS v16** and **Gulp v4** is required to work correctly (NodeJS v16.16 and Gulp v4.0.2 is based version).
+3. **npm rebuild** - if not all packages are installed after **npm i** command.
+4. **npm cache verify** - If after restarting, build doesn't catch changes "on the fly".
 
-________________________________________________________________________
-Структура папки #src:
+### Folder structure
 
-|fonts
+**#src** - source folder.
 
-|html
-|-components - разметка компонентов
-|-items - повт. комп. в других компоненах (эл. списков, ссылки, select и тд)
+**z_dist** - project bundle.
 
-|img
-|-favicon
-|-icons
-|-logo
-|-photos
-
-|js
-|-components - скрипты компонентов
-|-libs - файли подключения и настройки библиотек
-|-modules - функции, которые переиспользуются в разных компонентах
-
-
-|json
-* Название папок зависит от инф. хранящийся в JSON
-
-|scss
-|-base - базовые файлы стилей (переменные, обнуление, сетка, ui, миксины, шрифты)
-|-components - стили компонентов
-|-libs - файли подключения и настройки библиотек
-|-home - стили главной
-|-pages - стили страниц
-* У файле style.scss хранить только импорты других файлов!
-
-** Запущений на сборке сайт можно посмотреть глобально. Для этого нужно перейти в gulpfile.js, найти настройку Browser Sync и у
-свойстве tunnel ввести предпочетаемый домен. Лучше вводить что-то уникальное (не test123). Домен будет иметь приставку loca.lt.
-В качестве хостинга исп. ПК. Виключил сборку - сайт недоступен.
+```
+project
+│   readme.md
+│   package.json 
+|   package-lock.json
+|   gulpfile.js
+|   .gitignore
+│
+└───blob                          # Demo images
+|
+└───#src
+│   └───fonts                     # Fonts in .ttf, .otf format
+│   │
+│   └───html                      # All .html files
+|   |   *.html
+│   └───img                       # All images
+|   |   └───...    
+│   └───js                        # All .js files
+│   |   *.js  
+|   |   script.js                 # For import files
+|   └───json                      # All .json files
+|   |   └───...
+|   └───scss                      # All .scss files
+|       └───base                  # Basic stylisation files (vars, null, fonts etc.)
+|       └───components            # Components styles
+|       |   style.scss            # For import all styles
+│   
+└───z_dist                        # Project bundle
+|   └───css
+|   └───fonts
+|   └───img
+|   └───js
+|   *.html
+|
+└───config                        # Config build files (path & plugin settings)
+|
+└───docs (optional)               # Informational files
+|
+└───tasks                         # Tasks for processing different file types
+|
+└───node_modules
+    └───...
+```
