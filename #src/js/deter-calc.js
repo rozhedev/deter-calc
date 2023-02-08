@@ -48,13 +48,6 @@ function calcDeter3x3(num0, num1, num2, num3, num4, num5, num6, num7, num8) {
     return (num0 * num4 * num8) + (num6 * num1 * num5) + (num3 * num7 * num2) - (num6 * num4 * num2) - (num0 * num7 * num5) - (num3 * num1 * num8);
 }
 
-function getTempArrItem(condition, arrElem, parseFunc, outerCount, counter) {
-    if (condition) {
-        arrElem = parseFunc[outerCount];
-        counter++;
-    }
-}
-
 // * Array conversion
 
 for (let i = 0; i < allInpArr.length; i++) {
@@ -102,9 +95,6 @@ if (allInpArr[2] && allBtnArr[2] && output && emptyErrOutput) {
     let result = 0;
     let tempArr = [[], [], [], [], []];
     let calcConditionArr = [];
-    // * Counter variables 
-    let a, b, c, d, f;
-    a = b = c = d = f = 0;
 
     allBtnArr[2].addEventListener("click", function (e) {
         e.preventDefault();
@@ -120,41 +110,18 @@ if (allInpArr[2] && allBtnArr[2] && output && emptyErrOutput) {
                     i >= 0 && i <= 2 || i >= 4 && i <= 6 || i >= 8 && i <= 10,
                 ];
 
-                // * Собираем в массив 4 столбец.
-                // getTempArrItem(calcConditionArr[0], tempArr, i, a, parseArr(allInpArr[2]));
+                // * Parce in array fourty column
+                if (calcConditionArr[0]) tempArr[0].push(parseArr(allInpArr[2])[i]);
                 
-                // getTempArrItem(calcConditionArr[0], tempArr[0][a], parseArr(allInpArr[2]), i, a);
-                // getTempArrItem(calcConditionArr[1], tempArr[0][a], parseArr(allInpArr[2]), i, a);
-                // getTempArrItem(calcConditionArr[2], tempArr[1][b], parseArr(allInpArr[2]), i, b);
-                // getTempArrItem(calcConditionArr[3], tempArr[2][c], parseArr(allInpArr[2]), i, c);
-                // getTempArrItem(calcConditionArr[4], tempArr[3][d], parseArr(allInpArr[2]), i, d);
-                // getTempArrItem(calcConditionArr[5], tempArr[4][f], parseArr(allInpArr[2]), i, f);
+                if (calcConditionArr[1]) tempArr[0].push(parseArr(allInpArr[2])[i]);
+                
+                if (calcConditionArr[2]) tempArr[1].push(parseArr(allInpArr[2])[i]);
 
+                if (calcConditionArr[3]) tempArr[2].push(parseArr(allInpArr[2])[i]);
 
-                if (calcConditionArr[0]) {
-                    tempArr[0][a] = parseArr(allInpArr[2])[i];
-                    a++;
-                }
-                if (calcConditionArr[1]) {
-                    tempArr[0][a] = parseArr(allInpArr[2])[i];
-                    a++;
-                }
-                if (calcConditionArr[2]) {
-                    tempArr[1][b] = parseArr(allInpArr[2])[i];
-                    b++;
-                }
-                if (calcConditionArr[3]) {
-                    tempArr[2][c] = parseArr(allInpArr[2])[i];
-                    c++;
-                }
-                if (calcConditionArr[4]) {
-                    tempArr[3][d] = parseArr(allInpArr[2])[i];
-                    d++;
-                }
-                if (calcConditionArr[5]) {
-                    tempArr[4][f] = parseArr(allInpArr[2])[i];
-                    f++;
-                }
+                if (calcConditionArr[4]) tempArr[3].push(parseArr(allInpArr[2])[i]);
+                
+                if (calcConditionArr[5]) tempArr[4].push(parseArr(allInpArr[2])[i]);
                 i++;
             }
 
