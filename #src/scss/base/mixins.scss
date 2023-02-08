@@ -54,23 +54,3 @@
         color: $accent-color;
     }
 }
-
-@mixin centering {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin flex-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-@mixin rectangle($width, $height, $bg-color, $border-radius) {
-    width: $width;
-    height: $height;
-    background-color: $bg-color;
-    border-radius: $border-radius;
-}

@@ -44,7 +44,9 @@ function parseArr(inpArr) {
     return numArr;
 }
 
-function calcDeter3x3(num0, num1, num2, num3, num4, num5, num6, num7, num8) {
+function calcDeter3x3(
+    [num0, num1, num2, num3, num4, num5, num6, num7, num8]
+) {
     return (num0 * num4 * num8) + (num6 * num1 * num5) + (num3 * num7 * num2) - (num6 * num4 * num2) - (num0 * num7 * num5) - (num3 * num1 * num8);
 }
 
@@ -81,7 +83,7 @@ if (allInpArr[1] && allBtnArr[1] && output && emptyErrOutput) {
             for (let i = 0; i < parseArr(allInpArr[1]).length; i++) {
                 tempArr[i] = parseArr(allInpArr[1])[i];
             }
-            result = calcDeter3x3(tempArr[0], tempArr[1], tempArr[2], tempArr[3], tempArr[4], tempArr[5], tempArr[6], tempArr[7], tempArr[8]);
+            result = calcDeter3x3(tempArr);
 
             output.textContent = result;
             emptyErrOutput.textContent = "";
@@ -112,21 +114,21 @@ if (allInpArr[2] && allBtnArr[2] && output && emptyErrOutput) {
 
                 // * Parce in array fourty column
                 if (calcConditionArr[0]) tempArr[0].push(parseArr(allInpArr[2])[i]);
-                
+
                 if (calcConditionArr[1]) tempArr[0].push(parseArr(allInpArr[2])[i]);
-                
+
                 if (calcConditionArr[2]) tempArr[1].push(parseArr(allInpArr[2])[i]);
 
                 if (calcConditionArr[3]) tempArr[2].push(parseArr(allInpArr[2])[i]);
 
                 if (calcConditionArr[4]) tempArr[3].push(parseArr(allInpArr[2])[i]);
-                
+
                 if (calcConditionArr[5]) tempArr[4].push(parseArr(allInpArr[2])[i]);
                 i++;
             }
 
             for (let i = 1; i < tempResult.length; i++) {
-                tempResult[i] = tempArr[0][i] * calcDeter3x3(tempArr[i][0], tempArr[i][1], tempArr[i][2], tempArr[i][3], tempArr[i][4], tempArr[i][5], tempArr[i][6], tempArr[i][7], tempArr[i][8]);
+                tempResult[i] = tempArr[0][i] * calcDeter3x3(tempArr[i]);
 
                 if (i == 2 || i == 4) {
                     result -= tempResult[i];
